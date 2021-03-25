@@ -1,0 +1,14 @@
+{
+    "name": "mudasarrana/library-php",
+    "description": "Full Library",
+    "authors": [
+        {
+            "name": "mrana17",
+            "email": "rm_a@msn.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.11",
+        "symfony/http-foundation": "^5.2"
+    }
+}
