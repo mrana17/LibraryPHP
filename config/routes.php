@@ -1,9 +1,16 @@
 <?php
 
+use App\Controller\CartController;
+use App\Controller\CategoryController;
+use App\Controller\HomeController;
+use App\Controller\ItemController;
+
 return [
-    
-        ['GET', '/', function() {return file_get_contents(__DIR__ . '/../templates/index.html');}],
-        ['GET', '/category', function() {return file_get_contents(__DIR__ . '/../templates/category.html');}],
-        ['GET', '/item', function() {return file_get_contents(__DIR__ . '/../templates/item.html');}],
-        ['GET', '/cart', function() {return file_get_contents(__DIR__ . '/../templates/cart.html');}],
+    ['GET', '/', [HomeController::class, 'show']],
+    ['GET', '/category/{id}', [CategoryController::class, 'show']],
+    ['GET', '/item/{id}', [ItemController::class, 'show']],
+    ['GET', '/cart', [CartController::class, 'show']],
+    ['POST', '/cart/{id}', [CartController::class, 'add']],
+    ['GET', '/cart/success', [CartController::class, 'success']],
+    ['POST', '/borrow', [CartController::class, 'borrow']]
 ];
